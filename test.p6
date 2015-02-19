@@ -28,7 +28,42 @@ for @sorted -> $n {
     say "$n has won %matches{$n} matches and %sets{$n} sets";
 }
 
-my int $a = 1;
+my Int $a = 2;
 say $a;
+say '1' if $a == 1;
+say '2' if $a == 2;
 # $a = "hoge";
 # say $a;
+
+my @a = (2, 5, 3, 1, 9);
+say @a;
+for @a -> $i {
+    say $i;
+}
+for @a.sort -> $i {
+    say $i;
+}
+@a.sort.print;
+say '';
+
+class Hoge {
+    has $.def;
+    has $.abc;
+    has $!hoge;
+
+    submethod BUILD(:$!abc, :$!def) {
+        $!hoge = "$!abc hoge";
+    }
+
+    method say_abc() {
+        say $!hoge;
+    }
+
+    method say_def() {
+        say $.def;
+    }
+}
+
+my $ho = Hoge.new( abc=>'hoge', def=>1 );
+$ho.say_abc;
+$ho.say_def;
