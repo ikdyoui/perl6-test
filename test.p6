@@ -57,6 +57,8 @@ class Hoge {
 
     method say_abc() {
         say $!hoge;
+        say $.abc;
+        $!abc = "$!abc hoge";
     }
 
     method say_def() {
@@ -64,6 +66,8 @@ class Hoge {
     }
 }
 
-my $ho = Hoge.new( abc=>'hoge', def=>1 );
+my $ho = Hoge.new( abc=>'gefu', def=>1 );
+$ho.say_abc;
+$ho.say_abc;
 $ho.say_abc;
 $ho.say_def;
