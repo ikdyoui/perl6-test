@@ -49,16 +49,16 @@ say '';
 class Hoge {
     has $.def;
     has $.abc;
-    has $!hoge;
+    has $!_hoge;
 
     submethod BUILD(:$!abc, :$!def) {
-        $!hoge = "$!abc hoge";
+        $!_hoge = "$!abc hoge";
     }
 
     method say_abc() {
-        say $!hoge;
+        say $!_hoge;
         say $.abc;
-        $!abc = "$!abc hoge";
+        # $!abc = "$.abc hoge";
     }
 
     method say_def() {
