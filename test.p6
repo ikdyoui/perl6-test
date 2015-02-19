@@ -27,3 +27,8 @@ my @sorted = @names.sort({ %sets{$_} }).sort({ %matches{$_} }).reverse;
 for @sorted -> $n {
     say "$n has won %matches{$n} matches and %sets{$n} sets";
 }
+
+my int $a = 1;
+say $a;
+# $a = "hoge";
+# say $a;
